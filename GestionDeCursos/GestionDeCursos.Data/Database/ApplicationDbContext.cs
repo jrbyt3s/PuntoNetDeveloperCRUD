@@ -11,8 +11,8 @@ namespace GestionDeCursos.Data.Database
         public DbSet<Course> Courses { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { 
-        
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
 
         }
     }

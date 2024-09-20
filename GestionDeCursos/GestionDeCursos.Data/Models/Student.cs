@@ -34,13 +34,13 @@ namespace GestionDeCursos.Data.Models
         public int CourseDuration { get; set; }
 
         [Required]
-        [Display(Name ="Start")]
         [DataType(DataType.Date)]
+        [Display(Name = "Start Date")]
         public DateTime CourseStartDate { get; set; }
 
         [Required]
-        [Display(Name = "Bach Timing")]
         [DataType(DataType.Time)]
+        [Display(Name = "Batch Timing")]
         [DisplayFormat(DataFormatString = "{0:hh\\:mm tt}")]
         public DateTime BachTime { get; set; }
     }

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GestionDeCursos.Data.Models
@@ -14,6 +13,10 @@ namespace GestionDeCursos.Data.Models
         [StringLength(100)]
         [Display(Name = "Course")]
         public string? CourseName { get; set; }
+
+        [StringLength(250)]
+        [Display(Name ="Description")]
+        public string? CourseDescription { get; set; }
 
     }
 }
