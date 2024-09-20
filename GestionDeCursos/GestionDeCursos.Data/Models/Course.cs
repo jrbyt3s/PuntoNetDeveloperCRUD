@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GestionDeCursos.Web.Models
+namespace GestionDeCursos.Data.Models
 {
+    [Table("Courses", Schema = "Management")]
     public class Course
     {
         [Key]

@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GestionDeCursos.Web.Models
+namespace GestionDeCursos.Data.Models
 {
+    [Table("Students", Schema = "Management")]
     public class Student
     {
         [Key]

@@ -1,7 +1,15 @@
 //Archivo de configuración al iniciar el programa, permite la inyeccion de dependencias.
 // el builder es una instancia de la aplicación.
 
+using GestionDeCursos.Data.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Crear la dabaBase Connection:
+var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+//Registrar el contexto de base de datos ApplicationDbContext.cs:
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews(); //Model view controller
