@@ -37,13 +37,5 @@ namespace GestionDeCursos.Data.Repositories
             Context.Set<TEntity>().Remove(entity);
         }
 
-
-
-
-
-        public void Remove(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
