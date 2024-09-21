@@ -1,4 +1,5 @@
 ﻿using GestionDeCursos.Data.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,20 +17,29 @@ namespace GestionDeCursos.Data.Repositories
             Context = contextParam;
         }
 
-        public Task Add(TEntity entity)
+        public async Task<IEnumerable<TEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            return await Context.Set<TEntity>().ToListAsync();
         }
 
-        public Task<TEntity> Get(int? id)
+        public async Task<TEntity?> Get(int? id)
         {
-            throw new NotImplementedException();
+            return await Context.Set<TEntity>().FindAsync(id);
         }
 
-        public Task<IEnumerable<TEntity>> GetAll()
+        public async Task Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            await Context.Set<TEntity>().AddAsync(entity);
         }
+
+        public void Remove(TEntity entity)
+        {
+            Context.Set<TEntity>().Remove(entity);
+        }
+
+
+
+
 
         public void Remove(TEntity entity)
         {

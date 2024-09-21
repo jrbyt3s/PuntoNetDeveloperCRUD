@@ -11,7 +11,7 @@ namespace GestionDeCursos.Data.Repositories
     {
         Task<IEnumerable<TEntity>> GetAll();
 
-        Task<TEntity> Get( int? id );
+        Task<TEntity?> Get( int? id );
 
         Task Add(TEntity entity);
 
